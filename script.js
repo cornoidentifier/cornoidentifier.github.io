@@ -5,7 +5,7 @@ let index;
 
 function analisar() {
 
-  index = Math.floor(Math.random() * 5)
+  index = Math.floor(Math.random() * lista.length)
 
   if (nome.value.toLowerCase().includes("felipe") || nome.value.toLowerCase().includes("logan")) {
     resposta.textContent = `${nome.value} é incorneável`;
