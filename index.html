@@ -11,16 +11,19 @@
 <body>
 
   <div class="container">
+
+    <button id="lang" onclick="changeLang()">English</button>
+
     <div class="image">
       <img src="images/corno.jpg" alt="">
     </div>
 
-    <h1>Bem-vindo ao detector de cornos</h1>
-    <p>Digite um nome:</p>
+    <h1 id="title">Bem-vindo ao detector de cornos</h1>
+    <p id="paragraph">Digite um nome:</p>
     <div class="input">
       <input id="nome" type="text" autocomplete="off">
     </div>
-    <button type="button" onclick="analisar()">Verificar</button>
+    <button type="button" onclick="analisar()" id="verify">Verificar</button>
     <p id="resposta"></p>
   </div>
 
