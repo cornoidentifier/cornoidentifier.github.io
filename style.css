@@ -3,7 +3,7 @@
 }
 
 body {
-  min-height: 75vh;
+  min-height: 70vh;
   display: grid;
   place-content: center;
   position: relative;
@@ -49,4 +49,12 @@ p:last-child {
 
 button {
   padding: 3px 8px;
+}
+
+#lang{
+  padding:5px 10px;
+  margin-bottom:30px;
+  margin-top:-18px;
+  font-size:0.96rem;
+  cursor:pointer;
 }
