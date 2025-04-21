@@ -3,6 +3,7 @@
 }
 
 body {
+  padding-top:30px;
   min-height: 70vh;
   display: grid;
   place-content: center;
