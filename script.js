@@ -1,48 +1,92 @@
+const nome = document.getElementById("nome");
+const resposta = document.getElementById("resposta");
+let english = false;
+
+// Lista de nomes femininos
 const nomesFemininos = [
-  "ana", "maria", "beatriz", "julia", "carla", "amanda", "mariana",
-  "larissa", "fernanda", "bruna", "aline", "isabela", "sofia",
-  "laura", "patricia", "natalia", "jessica", "juliana", "luana",
-  "valentina", "elisa", "cecilia", "manuela", "eloa", "heloisa",
-  "agatha", "lavinia", "lara", "alice", "ester", "clara", "bianca",
-  "giovanna", "melissa", "isabel", "helena", "sabrina", "alicia",
-  "victoria", "raquel", "andressa", "pamela", "daniela", "tatiane",
-  "viviane", "suely", "tania", "michele", "fabiana", "marcia", "suzana",
-  "giselle", "marilda", "elaine", "camila", "renata", "solange", "karla",
-  "juliana", "denise", "patricia", "joana", "mariah", "adriana", "gisele",
-  "regina", "beatriz", "valeria", "rosana", "franciele", "isadora", "vanessa",
-  "monique", "clarissa", "talita", "simone", "angela", "graziela",
-  "maria clara", "andreia", "leticia", "miriam", "priscila", "carmen",
-  "daniele", "alexandra", "mariane", "carolina", "mariana", "aurelia",
-  "eliane", "renata", "silvia", "melissa", "laura", "flavia", "ellen",
-  "sandra", "zilda", "beatriz", "fabiane", "daniela", "luiza", "josiane",
-  "josefina", "adriane", "vivi", "rebeca", "sarah", "luiza", "teresa",
-  "fernanda", "veronica", "nadja", "leticia", "amanda", "cleusa", "kátia",
-  "patrícia", "micheline", "thalita", "felipe", "caroline", "alessandra",
-  "priscila", "karen", "rosana", "maura", "ivana", "ana paula", "simone",
-  "marina", "paula", "josie", "natasha", "glaucia", "valeria", "mirella",
-  "daniele", "emilia", "leila", "juliane", "pollyana", "nina", "magda",
-  "vitoria", "samantha", "francine", "andreia", "maria eduarda", "talita",
-  "janaina", "roseli", "aline", "paula", "ivone", "luciana", "elaine",
-  "monique", "keila", "sueli", "sonia", "solange", "beatriz", "eliane",
-  "camila", "sabrine", "tati", "geisa", "luiza", "lara", "luana", "giselle",
-  "ana clara", "bruna", "adriana", "gislene", "rosangela", "eliane", "thais",
-  "priscila", "dayane", "ruth", "cintia", "felicia", "marilia", "jessica",
-  "veronica", "flavia", "nathalia", "mariah", "ana beatriz", "cristiane",
-  "jaqueline", "carol", "emily", "beatriz", "alessandra", "josefina", "rebecca",
-  "andrea", "catarina", "ines", "maria cristina", "aurelia", "luzia", "lidiane",
-  "suely", "marilia", "cibele", "lais", "fermina", "hilda", "rosilene", "joana",
-  "carla", "silvia", "valeria", "leila", "maria de lourdes", "mirian", "juliana",
-  "valeria", "isabela", "paula", "marina", "leticia", "alvina", "luciane", "flavia",
-  "marcia", "vera", "andreia", "joana", "marlene", "marciana", "lucia", "zelia",
-  "zilda", "ana cristina", "caroline", "fabiola", "gloria", "maria angela", "geovana",
-  "maria rita", "adriana", "angelica", "tania", "helena", "edna", "carolina", "luana",
-  "samara", "carmen", "karen", "laura", "denise", "jessica", "mariana", "larissa",
-  "jaqueline", "clarice", "mariana", "ilza", "mirella", "bianca", "estela", "giselle",
-  "marianna", "ana beatriz", "katia", "aline", "thais", "flavia", "fabiane", "josiane",
-  "paula", "rejan", "lavinia", "cristiane", "rosa", "stella", "noemi", "graziela",
-  "maiara", "liliane", "loiane", "bruna", "isadora", "amelia", "viviane", "camila",
-  "neide", "alice", "carolina", "emily", "karen", "juana", "tania", "larissa", "marcia",
-  "gisele", "isabela", "flavia", "carla", "daniela", "beatriz", "clarissa", "maria",
-  "bruna", "talita", "adriana", "fran", "geisa", "mariana", "marlene", "elizabeth",
-  "joice", "camila", "luciana", "sarah", "maria clara", "melissa", "sabrina", "jessica"
+  "ana", "maria", "beatriz", "julia", "carla", "amanda", "mariana", 
+  "larissa", "fernanda", "bruna", "aline", "isabela", "sofia", "laura", 
+  "patricia", "natalia", "jessica", "juliana", "luana", "valentina", 
+  "elisa", "cecilia", "manuela", "eloa", "heloisa", "agatha", "lavinia", 
+  "lara", "alice", "ester", "clara", "bianca", "giovanna", "melissa", 
+  "isabel", "helena", "sabrina", "alicia", "victoria", "raquel", "andressa", 
+  "pamela", "daniela", "tatiane", "viviane", "suely", "tania", "michele", 
+  "fabiana", "marcia", "suzana", "giselle", "marilda", "elaine", "camila", 
+  "renata", "solange", "karla", "juliana", "denise", "patricia", "joana", 
+  "mariah", "adriana", "gisele", "regina", "beatriz", "valeria", "rosana", 
+  "franciele", "isadora", "vanessa", "monique", "clarissa", "talita", "simone", 
+  "angela", "graziela", "maria clara", "andreia", "leticia", "miriam", 
+  "priscila", "carmen", "daniele", "alexandra", "mariane", "carolina", "mariana", 
+  "aurelia", "eliane", "renata", "silvia", "melissa", "laura", "flavia", 
+  "ellen", "sandra", "zilda", "beatriz", "fabiane", "daniela", "luiza", "josiane", 
+  "josefina", "adriane", "vivi", "rebeca", "sarah", "luiza", "teresa", "fernanda", 
+  "veronica", "nadja", "leticia", "amanda", "cleusa", "kátia", "patrícia", 
+  "micheline", "thalita", "felipe", "caroline", "alessandra", "priscila", "karen", 
+  "rosana", "maura", "ivana", "ana paula", "simone", "marina", "paula", "josie", 
+  "natasha", "glaucia", "valeria", "mirella", "daniele", "emilia", "leila", 
+  "juliane", "pollyana", "nina", "magda", "vitoria", "samantha", "francine", 
+  "andreia", "maria eduarda", "talita", "janaina", "roseli", "aline", "paula", 
+  "ivone", "luciana", "elaine", "monique", "keila", "sueli", "sonia", "solange", 
+  "beatriz", "eliane", "camila", "sabrine", "tati", "geisa", "luiza", "lara", 
+  "luana", "giselle", "ana clara", "bruna", "adriana", "gislene", "rosangela", 
+  "eliane", "thais", "priscila", "dayane", "ruth", "cintia", "felicia", "marilia", 
+  "jessica", "veronica", "flavia", "nathalia", "mariah", "ana beatriz", "cristiane", 
+  "jaqueline", "carol", "emily", "beatriz", "alessandra", "josefina", "rebecca", 
+  "andrea", "catarina", "ines", "maria cristina", "aurelia", "luzia", "lidiane", 
+  "suely", "marilia", "cibele", "lais", "fermina", "hilda", "rosilene", "joana", 
+  "carla", "silvia", "valeria", "leila", "maria de lourdes", "mirian", "juliana", 
+  "valeria", "isabela", "paula", "marina", "leticia", "alvina", "luciane", "flavia", 
+  "marcia", "vera", "andreia", "joana", "marlene", "marciana", "lucia", "zelia", 
+  "zilda", "ana cristina", "caroline", "fabiola", "gloria", "maria angela", "geovana", 
+  "maria rita", "adriana", "angelica", "tania", "helena", "edna", "carolina", "luana", 
+  "samara", "carmen", "karen", "laura", "denise", "jessica", "mariana", "larissa", 
+  "jaqueline", "clarice", "mariana", "ilza", "mirella", "bianca", "estela", "giselle", 
+  "marianna", "ana beatriz", "katia", "aline", "thais", "flavia", "fabiane", "josiane", 
+  "paula", "rejan", "lavinia", "cristiane", "rosa", "stella", "noemi", "graziela", 
+  "maiara", "liliane", "loiane", "bruna", "isadora", "amelia", "viviane", "camila", 
+  "neide", "alice", "carolina", "emily", "karen", "juana", "tania", "larissa", "marcia", 
+  "gisele", "isabela", "flavia", "carla", "daniela", "beatriz", "clarissa", "maria", 
+  "bruna", "talita", "adriana", "fran", "geisa", "mariana", "marlene", "elizabeth", 
+  "joice", "camila", "luciana", "sarah", "maria clara", "melissa", "sabrina", "jessica",
+  "monica", "andrelise", "dana"
 ];
+
+function changeLang(){
+  english = true;
+  lista = ["will be a cuckold", "is a cuckold", "is not a cuckold yet. Yet", "maybe isn't a cuckold", "is not a cuckold", "will most likely be a cuckold", "is not a cuckold, despite looking like one"];
+  document.getElementById("title").innerText = "Welcome to the cuckold identifier";
+  document.getElementById("paragraph").innerText = "Type a name:";
+  document.getElementById("verify").innerText = "Check"
+  document.getElementById("lang").innerText = "Portuguese";
+}
+
+function changeLangToPortuguese(){
+  english = false;
+  lista = ["será corno", "é corno", "ainda não é corno. Ainda", "talvez seja corno", "não é corno", "muito provavelmente será corno", "não é corno, apesar de parecer"];
+  document.getElementById("title").innerText = "Bem-vindo ao detector de cornos";
+  document.getElementById("paragraph").innerText = "Digite um nome:";
+  document.getElementById("verify").innerText = "Verificar"
+  document.getElementById("lang").innerText = "English";
+}
+
+function analisar() {
+  const primeiroNome = nome.value.trim().split(' ')[0].toLowerCase();
+  let index = Math.floor(Math.random() * lista.length);
+  
+  if (nome.value === "") {
+    resposta.textContent = english ? "Type something first, you cuckold" : "Digite algo primeiro, seu corno";
+    return;
+  }
+  
+  // Verifica se o nome está na lista de femininos
+  const isFeminino = nomesFemininos.includes(primeiroNome);
+
+  if (nome.value.toLowerCase().includes("felipe") || nome.value.toLowerCase().includes("logan")) {
+    resposta.textContent = english ? `${nome.value} is uncuckable` : `${nome.value} é incorneável`;
+  } else if (nome.value.toLowerCase().includes("josh")) {
+    resposta.textContent = english ? `${nome.value} is a cuckold` : `${nome.value} é corno`;
+  } else {
+    const resultado = isFeminino && !english ? lista[index].replace('corno', 'corna') : lista[index];
+    resposta.textContent = `${nome.value} ${resultado}`;
+  }
+}
