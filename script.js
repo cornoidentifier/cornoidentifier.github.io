@@ -1,103 +1,48 @@
-const nome = document.getElementById("nome");
-const resposta = document.getElementById("resposta");
-const credit = document.getElementById("credit");
-let english = false;
-
 const nomesFemininos = [
   "ana", "maria", "beatriz", "julia", "carla", "amanda", "mariana",
   "larissa", "fernanda", "bruna", "aline", "isabela", "sofia",
-  "laura", "patricia", "natalia", "jessica", "juliana", "luana", "valentina"
+  "laura", "patricia", "natalia", "jessica", "juliana", "luana",
+  "valentina", "elisa", "cecilia", "manuela", "eloa", "heloisa",
+  "agatha", "lavinia", "lara", "alice", "ester", "clara", "bianca",
+  "giovanna", "melissa", "isabel", "helena", "sabrina", "alicia",
+  "victoria", "raquel", "andressa", "pamela", "daniela", "tatiane",
+  "viviane", "suely", "tania", "michele", "fabiana", "marcia", "suzana",
+  "giselle", "marilda", "elaine", "camila", "renata", "solange", "karla",
+  "juliana", "denise", "patricia", "joana", "mariah", "adriana", "gisele",
+  "regina", "beatriz", "valeria", "rosana", "franciele", "isadora", "vanessa",
+  "monique", "clarissa", "talita", "simone", "angela", "graziela",
+  "maria clara", "andreia", "leticia", "miriam", "priscila", "carmen",
+  "daniele", "alexandra", "mariane", "carolina", "mariana", "aurelia",
+  "eliane", "renata", "silvia", "melissa", "laura", "flavia", "ellen",
+  "sandra", "zilda", "beatriz", "fabiane", "daniela", "luiza", "josiane",
+  "josefina", "adriane", "vivi", "rebeca", "sarah", "luiza", "teresa",
+  "fernanda", "veronica", "nadja", "leticia", "amanda", "cleusa", "kátia",
+  "patrícia", "micheline", "thalita", "felipe", "caroline", "alessandra",
+  "priscila", "karen", "rosana", "maura", "ivana", "ana paula", "simone",
+  "marina", "paula", "josie", "natasha", "glaucia", "valeria", "mirella",
+  "daniele", "emilia", "leila", "juliane", "pollyana", "nina", "magda",
+  "vitoria", "samantha", "francine", "andreia", "maria eduarda", "talita",
+  "janaina", "roseli", "aline", "paula", "ivone", "luciana", "elaine",
+  "monique", "keila", "sueli", "sonia", "solange", "beatriz", "eliane",
+  "camila", "sabrine", "tati", "geisa", "luiza", "lara", "luana", "giselle",
+  "ana clara", "bruna", "adriana", "gislene", "rosangela", "eliane", "thais",
+  "priscila", "dayane", "ruth", "cintia", "felicia", "marilia", "jessica",
+  "veronica", "flavia", "nathalia", "mariah", "ana beatriz", "cristiane",
+  "jaqueline", "carol", "emily", "beatriz", "alessandra", "josefina", "rebecca",
+  "andrea", "catarina", "ines", "maria cristina", "aurelia", "luzia", "lidiane",
+  "suely", "marilia", "cibele", "lais", "fermina", "hilda", "rosilene", "joana",
+  "carla", "silvia", "valeria", "leila", "maria de lourdes", "mirian", "juliana",
+  "valeria", "isabela", "paula", "marina", "leticia", "alvina", "luciane", "flavia",
+  "marcia", "vera", "andreia", "joana", "marlene", "marciana", "lucia", "zelia",
+  "zilda", "ana cristina", "caroline", "fabiola", "gloria", "maria angela", "geovana",
+  "maria rita", "adriana", "angelica", "tania", "helena", "edna", "carolina", "luana",
+  "samara", "carmen", "karen", "laura", "denise", "jessica", "mariana", "larissa",
+  "jaqueline", "clarice", "mariana", "ilza", "mirella", "bianca", "estela", "giselle",
+  "marianna", "ana beatriz", "katia", "aline", "thais", "flavia", "fabiane", "josiane",
+  "paula", "rejan", "lavinia", "cristiane", "rosa", "stella", "noemi", "graziela",
+  "maiara", "liliane", "loiane", "bruna", "isadora", "amelia", "viviane", "camila",
+  "neide", "alice", "carolina", "emily", "karen", "juana", "tania", "larissa", "marcia",
+  "gisele", "isabela", "flavia", "carla", "daniela", "beatriz", "clarissa", "maria",
+  "bruna", "talita", "adriana", "fran", "geisa", "mariana", "marlene", "elizabeth",
+  "joice", "camila", "luciana", "sarah", "maria clara", "melissa", "sabrina", "jessica"
 ];
-
-let listaPt = [
-  "será corno(a)",
-  "é corno(a)",
-  "ainda não é corno(a). Ainda",
-  "talvez seja corno(a)",
-  "não é corno(a)",
-  "muito provavelmente será corno(a)",
-  "não é corno(a), apesar de parecer"
-];
-
-let listaEn = [
-  "will be a cuckold",
-  "is a cuckold",
-  "is not a cuckold yet. Yet",
-  "maybe isn't a cuckold",
-  "is not a cuckold",
-  "will most likely be a cuckold",
-  "is not a cuckold, despite looking like one"
-];
-
-let lista = [...listaPt];
-
-function setLang(lang) {
-  english = lang === "en";
-
-  if (english) {
-    lista = [...listaEn];
-    document.getElementById("title").innerText = "Welcome to the cuckold identifier";
-    document.getElementById("paragraph").innerText = "Type a name:";
-    document.getElementById("verify").innerText = "Check";
-    credit.innerText = "Created by Phil Godoy";
-  } else {
-    lista = [...listaPt];
-    document.getElementById("title").innerText = "Bem-vindo ao detector de cornos";
-    document.getElementById("paragraph").innerText = "Digite um nome:";
-    document.getElementById("verify").innerText = "Verificar";
-    credit.innerText = "Criado por Felipe Godoy";
-  }
-}
-
-function analisar() {
-  const valor = nome.value.trim();
-  const lower = valor.toLowerCase();
-  const index = Math.floor(Math.random() * lista.length);
-
-  const isFeminino = !english && (
-    nomesFemininos.includes(lower) ||
-    lower.endsWith("a") ||
-    lower.endsWith("e")
-  );
-
-  if (valor === "") {
-    resposta.textContent = english
-      ? "Type something first, you cuckold"
-      : "Digite algo primeiro, seu corno";
-    return;
-  }
-
-  if (lower.includes("felipe") || lower.includes("logan")) {
-    resposta.textContent = english
-      ? `${valor} is uncuckable`
-      : `${valor} é incorneável`;
-    return;
-  }
-
-  if (lower.includes("josh")) {
-    resposta.textContent = english
-      ? `${valor} is a cuckold`
-      : `${valor} é corno`;
-    return;
-  }
-
-  let resultado = lista[index];
-
-  if (!english && isFeminino) {
-    resultado = resultado.replace(/corno\(a\)/g, "corna").replace(/corno/g, "corna");
-  } else {
-    resultado = resultado.replace(/\(a\)/g, "");
-  }
-
-  resposta.style.opacity = 0;
-  setTimeout(() => {
-    resposta.textContent = `${valor} ${resultado}`;
-    resposta.style.opacity = 1;
-  }, 150);
-}
-
-nome.addEventListener("keypress", function (e) {
-  if (e.key === "Enter") {
-    analisar();
-  }
-});
