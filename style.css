@@ -3,7 +3,7 @@
 }
 
 body {
-  padding-top:30px;
+  padding-top:35px;
   min-height: 70vh;
   display: grid;
   place-content: center;
@@ -62,7 +62,7 @@ button {
 
 #credit {
   font-size: 0.85rem; /* Menor tamanho */
-  margin-top: 40px; /* Maior espaçamento acima */
+  margin-top: 30px; /* Maior espaçamento acima */
   color: #555; /* Cor mais discreta */
 }
 
