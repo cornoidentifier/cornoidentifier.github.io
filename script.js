@@ -7,7 +7,33 @@ let lista = [
   "não é corno", "muito provavelmente será corno", "não é corno, apesar de parecer"
 ];
 
-const nomesFemininos = ["ana", "maria", "joana", "luana", "camila", "beatriz", "patricia", "fernanda"]; // Exemplo de nomes femininos
+const nomesFemininos = [
+    "Aline", "Amanda", "Ana", "Beatriz", "Bianca", "Bruna", "Camila", "Carolina", "Clara", "Clarissa",
+    "Cíntia", "Cintia", "Cristina", "Daniela", "Débora", "Debora", "Denise", "Eduarda", "Eliane", "Elisa", 
+    "Fabiana", "Fernanda", "Flávia", "Flavia", "Gabriela", "Geovana", "Glaucia", "Graziela", "Helena", 
+    "Ingrid", "Isabel", "Jéssica", "Jessica", "Juliana", "Karina", "Larissa", "Laura", "Letícia", "Leticia", 
+    "Luana", "Luana", "Luísa", "Luisa", "Manuela", "Marcela", "Mariana", "Marta", "Melissa", "Michele", 
+    "Monique", "Natália", "Natalia", "Nicole", "Noemi", "Patrícia", "Patricia", "Paula", "Priscila", 
+    "Rafaela", "Renata", "Roberta", "Sabrina", "Samara", "Sandra", "Sílvia", "Silvia", "Simone", "Talita", 
+    "Tatiane", "Thaís", "Thais", "Vanessa", "Vitória", "Vitoria", "Yasmin", "Adriana", "Alessandra", 
+    "Amélia", "Amelia", "Ana Clara", "Ana Clara", "Andreia", "Angela", "Anita", "Aparecida", "Ariane", 
+    "Bianca", "Bruna", "Camila", "Carla", "Cecília", "Cecilia", "Dalila", "Daniele", "Diana", "Elisa", 
+    "Fabíola", "Fabiola", "Fátima", "Fatima", "Flávia", "Flavia", "Gabrielle", "Gisele", "Giovana", 
+    "Graziele", "Helena", "Isabela", "Ivana", "Janaína", "Janaina", "Jéssica", "Joana", "Karine", "Kátia", 
+    "Katya", "Laís", "Lais", "Letícia", "Leticia", "Lívia", "Livia", "Lorena", "Luciana", "Luísa", "Luisa", 
+    "Lúcia", "Lucia", "Manuela", "Maria", "Marília", "Marilia", "Marina", "Marta", "Michele", "Milena", 
+    "Mônica", "Monica", "Natália", "Natalia", "Nicole", "Priscila", "Raquel", "Renata", "Rita", "Roberta", 
+    "Sabrina", "Sílvia", "Silvia", "Simone", "Sônia", "Sonya", "Talita", "Tatiane", "Tereza", "Valéria", 
+    "Valeria", "Vanessa", "Verônica", "Veronica", "Vera", "Vitória", "Yasmin", "Zélia", "Zelia", "Abigail", 
+    "Adélia", "Adelia", "Amália", "Amalia", "Andréa", "Andrea", "Anésia", "Anesia", "Angélica", "Angelica", 
+    "Antonieta", "Ariane", "Aurora", "Bernadete", "Carolina", "Catarina", "Cecília", "Cristina", "Célia", 
+    "Celia", "Dalila", "Daniele", "Débora", "Debora", "Eloá", "Eloa", "Eliane", "Érica", "Erica", "Fabiola", 
+    "Fernanda", "Giane", "Greice", "Helena", "Inês", "Ines", "Ivana", "Janaína", "Janaina", "Joana", 
+    "Karine", "Lana", "Laura", "Lívia", "Livia", "Luciana", "Luana", "Luísa", "Lúcia", "Manuela", "Mariana", 
+    "Maristela", "Marta", "Michele", "Milena", "Mônica", "Monica", "Patrícia", "Raquel", "Rafaela", "Renata", 
+    "Rita", "Sabrina", "Sílvia", "Simone", "Sônia", "Talita", "Tatiane", "Thaís", "Valéria", "Vanessa", 
+    "Verônica", "Vera", "Vitória", "Yasmin", "Zilda", "Andrelise"
+];
 
 // Função para remover acentos (normalizar a comparação)
 function removeAcento(str) {
