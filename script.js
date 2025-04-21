@@ -60,6 +60,7 @@ function changeLang() {
   document.getElementById("title").innerText = "Welcome to the cuckold identifier";
   document.getElementById("paragraph").innerText = "Type a name:";
   document.getElementById("verify").innerText = "Check";
+  document.getElementById("credit").innerText = "Created by Felipe Godoy";
 }
 
 // Função para alterar o idioma para português
@@ -72,6 +73,7 @@ function changeLangToPortuguese() {
   document.getElementById("title").innerText = "Bem-vindo ao detector de cornos";
   document.getElementById("paragraph").innerText = "Digite um nome:";
   document.getElementById("verify").innerText = "Verificar";
+  document.getElementById("credit").innerText = "Criado por Felipe Godoy";
 }
 
 // Função para analisar o nome e retornar a resposta
