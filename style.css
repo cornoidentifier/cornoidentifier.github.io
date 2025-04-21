@@ -67,10 +67,10 @@ button {
 
 /* Estilizando o parágrafo de resposta */
 #resposta {
-  min-height: 40px; /* Altura mínima para reservar o espaço */
+  min-height: 20px; /* Altura mínima para reservar o espaço */
   padding: 10px 0;  /* Espessura do espaço */
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
   transition: all 0.3s ease; /* Suavizar transições de alterações */
 }
