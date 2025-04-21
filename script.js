@@ -93,9 +93,9 @@ function analisar() {
   } else if (nomeLower.includes("josh")) {
     resposta.textContent = english ? `${nomeDigitado} is a cuckold` : `${nomeDigitado} é corno`;
   } else {
-    // Verificação se algum nome feminino está presente
-    const nomeSemAcento = removeAcento(nomeLower);
-    const nomeFemininoEncontrado = nomesFemininos.some(nome => nomeSemAcento.includes(nome));
+    // Verificação se o nome digitado corresponde a um nome feminino
+    const nomeSemAcento = removeAcento(nomeLower); // Remover acentos
+    const nomeFemininoEncontrado = nomesFemininos.some(nome => removeAcento(nome.toLowerCase()) === nomeSemAcento);
 
     // Substitui "corno" por "corna" se nome feminino for encontrado
     let resultado = `${nomeDigitado} ${lista[index]}`;
