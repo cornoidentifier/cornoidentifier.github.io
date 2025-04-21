@@ -1,106 +1,66 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
 }
 
 body {
-  min-height: 100vh;
+  min-height: 70vh;
   display: grid;
   place-content: center;
-  margin: 0;
-  background-color: #f3f3f3;
+  position: relative;
 }
 
 .container {
-  background-color: white;
-  padding: 30px 20px;
-  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 400px;
-}
-
-#lang-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 25px;
-  margin-top: -10px;
-}
-
-#lang-buttons button {
-  padding: 5px 10px;
-  font-size: 0.96rem;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.2s ease;
-}
-
-#lang-buttons button:hover {
-  background-color: #0056b3;
 }
 
 h1 {
   margin-top: -5px;
-  margin-bottom: -1px;
-  line-height: 1;
+  margin-bottom:-1px;
+  line-height:1;
   font-size: 1.7rem;
 }
 
 img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 6px;
+  width: 300px;
+  height: 200px;
 }
 
 input {
-  width: 80%;
-  max-width: 300px;
+  width: 200px;
   outline: none;
   text-align: center;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-top: 10px;
 }
 
 button {
   margin-top: 15px;
-  padding: 6px 12px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-#verify {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.2s ease;
-}
-
-#verify:hover {
-  background-color: #218838;
 }
 
 p {
   font-size: 1rem;
 }
 
-#resposta {
+p:first-child {
+  font-size: 17px;
+}
+
+p:last-child {
   height: 25px;
-  font-weight: bold;
-  margin-top: 10px;
-  transition: opacity 0.3s ease;
+}
+
+button {
+  padding: 3px 8px;
+}
+
+#lang, #pt {
+  padding:5px 10px;
+  margin-bottom:30px;
+  margin-top:-18px;
+  font-size:0.96rem;
+  cursor:pointer;
 }
 
 #credit {
-  font-size: 0.9rem;
-  margin-top: 25px;
-  color: #777;
+  font-size: 0.85rem; /* Menor tamanho */
+  margin-top: 40px; /* Maior espaçamento acima */
+  color: #555; /* Cor mais discreta */
 }
