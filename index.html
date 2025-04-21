@@ -1,24 +1,41 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  <div id="lang-buttons">
-    <button id="lang-pt" onclick="setLang('pt')">Português</button>
-    <button id="lang-en" onclick="setLang('en')">English</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificador de Cornos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div id="lang-buttons">
+      <button id="lang-pt" onclick="setLang('pt')">Português</button>
+      <button id="lang-en" onclick="setLang('en')">English</button>
+    </div>
+
+    <div class="image">
+      <img src="images/corno.jpg" alt="">
+    </div>
+
+    <h1 id="title">Bem-vindo ao detector de cornos</h1>
+    <p id="paragraph">Digite um nome:</p>
+    
+    <div class="input">
+      <input id="nome" type="text" autocomplete="off">
+    </div>
+    
+    <button type="button" onclick="analisar()" id="verify">Verificar</button>
+    <p id="resposta"></p>
+
+    <p id="credit">Criado por Felipe Godoy</p>
+
   </div>
 
-  <div class="image">
-    <img src="images/corno.jpg" alt="">
-  </div>
+  <script src="script.js"></script>
+</body>
 
-  <h1 id="title">Bem-vindo ao detector de cornos</h1>
-  <p id="paragraph">Digite um nome:</p>
-  
-  <div class="input">
-    <input id="nome" type="text" autocomplete="off">
-  </div>
-  
-  <button type="button" onclick="analisar()" id="verify">Verificar</button>
-  <p id="resposta"></p>
-
-  <p id="credit">Criado por Felipe Godoy</p>
-
-</div>
+</html>
