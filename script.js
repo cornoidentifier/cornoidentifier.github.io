@@ -10,7 +10,7 @@ let lista = [
 const nomesFemininos = [
     "Abigail", "Adélia", "Adelia", "Adriana", "Agata", "Ágata", "Alana", "Alessandra", "Alice", "Alicia",
     "Alina", "Alícia", "Amabile", "Amábile", "Amalia", "Amália", "Amara", "Amelia", "Amélia", "Amora",
-    "Ana", "Ana Beatriz", "Ana Clara", "Ana Júlia", "Ana Julia", "Ana Laura", "Ana Luíza", "Ana Luiza",
+    "Ana", "Anna", "Anne", "Ana Beatriz", "Ana Clara", "Ana Júlia", "Ana Julia", "Ana Laura", "Ana Luíza", "Ana Luiza",
     "Ana Vitória", "Analu", "Anastácia", "Andreia", "Andrea", "Andréa", "Andrelise", "Angela", "Angelica",
     "Angélica", "Angelina", "Anésia", "Anesia", "Anita", "Antônia", "Antonella", "Antonieta", "Aparecida",
     "Aqua", "Arlete", "Arlinda", "Ariana", "Ariane", "Ariela", "Ariella", "Assunta", "Aurélia", "Aurea",
