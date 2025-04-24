@@ -88,30 +88,43 @@ function changeLangToPortuguese() {
 // Função para analisar o nome e retornar a resposta
 function analisar() {
   const nomeDigitado = nome.value.trim();
-  const nomeLower = nomeDigitado.toLowerCase(); // Nome em minúsculas para comparação
-  let index = Math.floor(Math.random() * lista.length);
-
+  
   if (!nomeDigitado) {
     resposta.textContent = english ? "Type something first, you cuckold" : "Digite algo primeiro, seu corno";
     return;
   }
 
-  // Verificação para nomes específicos (Felipe, Logan, Josh)
-  if (nomeLower.includes("felipe") || nomeLower.includes("logan")) {
+  // Divide o nome em partes, remove acentos e coloca tudo em minúsculo
+  const nomesSeparados = nomeDigitado
+    .split(' ')
+    .map(parte => removeAcento(parte.toLowerCase()));
+    
+  const nomesFemininosNormalizados = nomesFemininos.map(nome =>
+    removeAcento(nome.toLowerCase())
+  );
+
+  let index = Math.floor(Math.random() * lista.length);
+
+  // Verificação para nomes especiais
+  if (nomesSeparados.some(nome => nome.includes("felipe") || nome.includes("logan"))) {
     resposta.textContent = english ? `${nomeDigitado} is uncuckable` : `${nomeDigitado} é incorneável`;
-  } else if (nomeLower.includes("josh")) {
-    resposta.textContent = english ? `${nomeDigitado} is a cuckold` : `${nomeDigitado} é corno`;
-  } else {
-    // Verificação se o nome digitado corresponde a um nome feminino
-    const nomeSemAcento = removeAcento(nomeLower); // Remover acentos
-    const nomeFemininoEncontrado = nomesFemininos.some(nome => removeAcento(nome.toLowerCase()) === nomeSemAcento);
-
-    // Substitui "corno" por "corna" se nome feminino for encontrado
-    let resultado = `${nomeDigitado} ${lista[index]}`;
-    if (nomeFemininoEncontrado) {
-      resultado = resultado.replace("corno", "corna");
-    }
-
-    resposta.textContent = resultado;
+    return;
   }
+
+  if (nomesSeparados.some(nome => nome.includes("josh"))) {
+    resposta.textContent = english ? `${nomeDigitado} is a cuckold` : `${nomeDigitado} é corno`;
+    return;
+  }
+
+  // Verificação se algum dos nomes é feminino
+  const nomeFemininoEncontrado = nomesSeparados.some(parte =>
+    nomesFemininosNormalizados.includes(parte)
+  );
+
+  let resultado = `${nomeDigitado} ${lista[index]}`;
+  if (nomeFemininoEncontrado) {
+    resultado = resultado.replace("corno", "corna");
+  }
+
+  resposta.textContent = resultado;
 }
