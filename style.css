@@ -52,6 +52,10 @@ button {
   padding: 3px 8px;
 }
 
+#lang-buttons{
+  margin-bottom: 5px;
+}
+
 #lang, #pt {
   padding: 5px 10px;
   margin-bottom: 30px;
